@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubun-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -16,7 +16,7 @@ jobs:
         run: echo "Build OK - HTML validated"
 
   deploy:
-    runs-on: ubun-latest
+    runs-on: ubuntu-latest
     needs: build   # This ensures deploy runs only if build is successful
     steps:
       - name: Checkout repository
@@ -26,7 +26,7 @@ jobs:
         run: echo "Deployment successful to staging"
 
   upload-artifact:
-    runs-on: ubun-latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Checkout repository
